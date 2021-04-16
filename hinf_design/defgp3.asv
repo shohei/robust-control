@@ -1,0 +1,5 @@
+defpert;
+
+omega_n=20;
+zeta=0.7;
+alpha=zeta
