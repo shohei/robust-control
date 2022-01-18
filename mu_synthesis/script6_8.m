@@ -10,12 +10,14 @@ Pn = Ppert.nominal;
 
 Wt = makeweight2(0.1,500,10,0.7);
 
-Wps = tf([1/50 1],[1 1e-3])*60;
+%Wps = tf([1/50 1],[1 1e-3])*60;
+Wps = tf([1/50 1],[1 1e-3])*500;
 Weps = 1e-4;
 
 defgp_mu2;
 dkitopt = dksynOptions('DisplayWhileAutoIter','on',...
     'NumberOfAutoIterations',10,...
+    'MixedMU','on',...
     'FrequencyVector',logspace(1,4,200));
 
 [Kmu, Gclp,mubnd,dkinfo] = dksyn(G,1,1,dkitopt);
